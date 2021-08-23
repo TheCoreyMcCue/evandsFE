@@ -6,9 +6,6 @@ import { useState } from 'react';
 const TitleForm = () => {
     const [titleText, setTitleText] = useState('');
 
-    // const handleFormData = (event) => {
-
-    // }
     const handleSubmit = (event) => {
         event.preventDefault();
     }
