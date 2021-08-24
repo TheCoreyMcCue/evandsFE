@@ -2,7 +2,7 @@
 import "./App.css";
 import TitleForm from "./Components/TitleForm/TitleForm";
 import ProgressBar from "./Components/ProgressBar/ProgressBar";
-import {Card, Button} from 'react-bootstrap';
+import { Card, Button } from "react-bootstrap";
 
 const axios = require("axios").default;
 
@@ -28,33 +28,37 @@ function App() {
   let config = {
     headers: {
       "Content-Type": "application/json",
-      }
-    }
+    },
+  };
 
-    let data = {
-      "title": "test"
-     }
+  let data = {
+    title: "test",
+  };
 
   const send = () => {
-    axios.post('https://us-central1-and-forms.cloudfunctions.net/sendQuestionnaire', data, config)
-   .then((res) => {
-      console.log(res)
-     })
-    .catch((err) => {
-      console.log(err)
-   });
-}
+    axios
+      .post(
+        "https://us-central1-and-forms.cloudfunctions.net/sendQuestionnaire",
+        data,
+        config
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-
-
-
-
+  //"https://us-central1-and-forms.cloudfunctions.net/sendQuestionnaire",
 
   return (
     <div className="App">
-      <Card style={{width: "60%", position: "absolute", top: "20%", left: "20%"}}>
+      <Card
+        style={{ width: "60%", position: "absolute", top: "20%", left: "20%" }}
+      >
         <Card.Body>
-          <ProgressBar/>
+          <ProgressBar />
           <TitleForm handleSubmit={handleSubmit} />
           <Button onClick={send}>post</Button>
         </Card.Body>
