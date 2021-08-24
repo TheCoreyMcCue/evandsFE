@@ -12,10 +12,10 @@ const PickDate = () => {
         setStartDate(evt.target.value)
     }
     return (
-        <div className="date-picker" style={{ marginTop: "1%"}}>
-            <label style={{paddingLeft: "20%"}} htmlFor="start">Start date:</label>
+        <div className="date-picker" style={{ marginTop: "1%", position: "relative"}}>
+            <label style={{position: "absolute", left: "20%", top: "4px"}} htmlFor="start">Start date:</label>
         <div style={{paddingLeft: "42%"}}>
-            <input onChange={handleNewDate} type="date" id="start" name="trip-start"
+            <input style={{position: "absolute", top: "4px", right: "20%"}} onChange={handleNewDate} type="date" id="start" name="trip-start"
                 value={startDate}
             >
             </input>
