@@ -2,6 +2,7 @@ import React from "react";
 import { Form, Button } from "react-bootstrap";
 import "./TitleForm.css";
 import { useState } from "react";
+import Dropdown from '../DropDown/DropDown';
 import moment from "moment";
 
 const TitleForm = ({ handleSubmit }) => {
@@ -24,8 +25,8 @@ const TitleForm = ({ handleSubmit }) => {
   };
 
   return (
-    <div className="d-flex justify-content-center">
-      <Form className="event-name">
+    <div className="d-flex justify-content-left form-content">
+      <Form className="event-name" style={{position: "relative", bottom: "2vh"}}>
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label>Name of Event</Form.Label>
           <Form.Control
@@ -58,10 +59,11 @@ const TitleForm = ({ handleSubmit }) => {
             ></input>
           </div>
         </div>
+        <Dropdown />
         <Button
           onClick={handleSubmit}
           type="submit"
-          className="submit-button w-100"
+          className="submit-button"
         >
           Send
         </Button>

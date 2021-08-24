@@ -1,0 +1,16 @@
+@media (max-width: 300px) {
+    .next-button {
+      top: 400px;
+    }
+  }
+@media (min-width: 300px) and (max-width: 500px) {
+    .next-button {
+        top: 266px;
+        left: 70px;
+    }
+}
+@media (min-width: 500px) and (max-width: 1400px) {
+    .next-button {
+        top: 200px;
+    }
+}
