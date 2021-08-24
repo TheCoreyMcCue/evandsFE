@@ -12,11 +12,10 @@ const TitleForm = () => {
 
     const handleChange = (e) => {
         setTitleText(e.target.value)
-        console.log(e.target.value);
     }
 
     return (
-        <div class="d-flex justify-content-center">
+        <div className="d-flex justify-content-center">
             <Form className="event-name">
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Name of Event</Form.Label>
