@@ -1,13 +1,16 @@
 // import logo from './logo.svg';
 import './App.css';
 import TitleForm from './Components/TitleForm/TitleForm';
-import PickDate from './Components/DatePicker/DatePicker';
 
 function App() {
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+}
+
   return (
     <div className="App">
-      <TitleForm />
-      <PickDate />
+      <TitleForm handleSubmit={handleSubmit}/>
     </div>
   );
 }
