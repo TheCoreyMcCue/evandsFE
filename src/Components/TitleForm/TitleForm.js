@@ -3,15 +3,13 @@ import { Form, Button } from "react-bootstrap";
 import "./TitleForm.css";
 import { useState } from "react";
 import Dropdown from "../DropDown/DropDown";
-import moment from "moment";
+// import moment from "moment";
 const axios = require("axios").default;
 
 const TitleForm = () => {
   const [titleText, setTitleText] = useState("");
   const [email, setEmail] = useState("");
-  const [startDate, setStartDate] = useState(
-    moment()
-  );
+  const [startDate, setStartDate] = useState("");
 
   const [showTtileError, setShowTtileError] = useState(false);
   const [showEmailError, setShowEmailError] = useState(false);
@@ -20,12 +18,10 @@ const TitleForm = () => {
   const handleTitleChange = (e) => {
     setTitleText(e.target.value);
 
-    //length check text.length > 256 show a message
     console.log("titleText length: ", titleText.length);
 
-    if (titleText.length === 4) {
+    if (titleText.length === 5) {
       setShowTitileLengthError(true);
-      // setTitleText(titleText.substr(0, 5));
     } else {
       setShowTitileLengthError(false);
     }
@@ -54,7 +50,7 @@ const TitleForm = () => {
       console.log(sendTitle);
       setTitleText("");
       setEmail("");
-      setStartDate(moment(new Date()).format("YYYY-MM-DD"));
+      setStartDate("");
     }
   };
 
@@ -90,7 +86,11 @@ const TitleForm = () => {
         className="event-name"
         style={{ position: "relative", bottom: "2vh" }}
       >
-        <Form.Group controlId="exampleForm.ControlTextarea1" className="mb-3" required>
+        <Form.Group
+          controlId="exampleForm.ControlTextarea1"
+          className="mb-3"
+          required
+        >
           <Form.Label>Name of Event</Form.Label>
           <Form.Control
             placeholder="Club Team Building"
@@ -125,11 +125,20 @@ const TitleForm = () => {
               id="start"
               name="trip-start"
               value={startDate}
+              required
             ></input>
           </div>
         </div>
         <Dropdown />
-        <Button onClick={handleSubmit} type="submit" className={ `${titleText.length > 0 && email.length > 0 ? "submit-button" : "disabled"}` }>
+        <Button
+          onClick={handleSubmit}
+          type="submit"
+          className={`${
+            titleText.length > 0 && email.length > 0
+              ? "submit-button"
+              : "disabled"
+          }`}
+        >
           Send
         </Button>
       </Form>
