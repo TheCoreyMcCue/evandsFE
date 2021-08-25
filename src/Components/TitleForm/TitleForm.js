@@ -54,7 +54,7 @@ const TitleForm = () => {
       console.log(sendTitle);
       setTitleText("");
       setEmail("");
-      setStartDate(moment(new Date()).format("YYYY-MM-DD"));
+      setStartDate(moment(new Date()));
     }
   };
 
