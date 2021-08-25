@@ -93,9 +93,9 @@ const TitleForm = () => {
           className="mb-3"
           required
         >
-          <Form.Label>Name of Event</Form.Label>
+          <Form.Label>Survey Title *</Form.Label>
           <Form.Control
-            placeholder="Club Team Building"
+            placeholder="Enter Survey Title"
             onChange={handleTitleChange}
             value={titleText}
             type="text"
@@ -108,7 +108,7 @@ const TitleForm = () => {
           ) : null}
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlTextarea1" className="mb-3">
-          <Form.Label>Email To</Form.Label>
+          <Form.Label>Email To *</Form.Label>
           <Form.Control
             placeholder="name@example.com"
             onChange={handleEmailChange}
@@ -119,7 +119,7 @@ const TitleForm = () => {
           {showEmailError ? <label>Email is missing</label> : null}
         </Form.Group>
         <div className="date-picker mb-3" style={{ marginTop: "5px" }}>
-          <label htmlFor="start">Start date:</label>
+          <label htmlFor="start">Start date: *</label>
           <div>
             <input
               onChange={handleNewDate}
@@ -137,7 +137,9 @@ const TitleForm = () => {
 
           Send
         </Button>
+      <p className="pt-2">* this field is required</p>
       </Form>
+
     </div>
   );
 };
