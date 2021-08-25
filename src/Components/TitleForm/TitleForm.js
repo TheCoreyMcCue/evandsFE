@@ -20,7 +20,7 @@ const TitleForm = () => {
 
     console.log("titleText length: ", titleText.length);
 
-    if (titleText.length === 5) {
+    if (titleText.length > 5) {
       setShowTitileLengthError(true);
     } else {
       setShowTitileLengthError(false);
@@ -63,7 +63,7 @@ const TitleForm = () => {
   let data = {
     title: titleText,
     deadline: startDate,
-    email: email
+    respondents: [email]
   };
 
   const sendTitle = () => {
