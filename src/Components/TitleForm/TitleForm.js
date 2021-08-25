@@ -129,7 +129,7 @@ const TitleForm = () => {
           </div>
         </div>
         <Dropdown />
-        <Button onClick={handleSubmit} type="submit" className={ `${titleText.length > 0 && email.length > 0 ? "submit-button" : "disabled"}` }>
+        <Button onClick={handleSubmit} type="submit" className={ `${titleText.length > 0 && email.length > 0 && startDate.length > 0 ? "submit-button" : "disabled"}` }>
           Send
         </Button>
       </Form>
