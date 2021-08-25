@@ -10,7 +10,7 @@ const TitleForm = () => {
   const [titleText, setTitleText] = useState("");
   const [email, setEmail] = useState("");
   const [startDate, setStartDate] = useState(
-    moment(new Date()).format("YYYY-MM-DD")
+    moment()
   );
 
   const [showTtileError, setShowTtileError] = useState(false);
@@ -87,7 +87,7 @@ const TitleForm = () => {
         className="event-name"
         style={{ position: "relative", bottom: "2vh" }}
       >
-        <Form.Group controlId="exampleForm.ControlTextarea1" required>
+        <Form.Group controlId="exampleForm.ControlTextarea1" className="mb-3" required>
           <Form.Label>Name of Event</Form.Label>
           <Form.Control
             placeholder="Club Team Building"
@@ -99,7 +99,7 @@ const TitleForm = () => {
           {showTtileError ? <label>Text is missing</label> : null}
           {showTitileLengthError ? <label>Tile length excceded</label> : null}
         </Form.Group>
-        <Form.Group controlId="exampleForm.ControlTextarea1">
+        <Form.Group controlId="exampleForm.ControlTextarea1" className="mb-3">
           <Form.Label>Email To</Form.Label>
           <Form.Control
             placeholder="name@example.com"
@@ -110,7 +110,7 @@ const TitleForm = () => {
           />
           {showEmailError ? <label>Email is missing</label> : null}
         </Form.Group>
-        <div className="date-picker" style={{ marginTop: "5px" }}>
+        <div className="date-picker mb-3" style={{ marginTop: "5px" }}>
           <label htmlFor="start">Start date:</label>
           <div>
             <input
