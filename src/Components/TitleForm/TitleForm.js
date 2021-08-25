@@ -2,19 +2,31 @@ import React from "react";
 import { Form, Button } from "react-bootstrap";
 import "./TitleForm.css";
 import { useState } from "react";
-import Dropdown from '../DropDown/DropDown';
+import Dropdown from "../DropDown/DropDown";
 import moment from "moment";
 const axios = require("axios").default;
 
-const TitleForm = ( ) => {
+const TitleForm = () => {
   const [titleText, setTitleText] = useState("");
   const [email, setEmail] = useState("");
   const [startDate, setStartDate] = useState(
     moment(new Date()).format("YYYY-MM-DD")
   );
 
+  const [showTtileError, setShowTtileError] = useState(false);
+  const [showEmailError, setShowEmailError] = useState(false);
+  const [showTitileLengthError, setShowTitileLengthError] = useState(false);
+
   const handleTitleChange = (e) => {
     setTitleText(e.target.value);
+
+    //length check text.length > 256 show a message
+    console.log("titleText length: ", titleText.length);
+
+    if (titleText.length >= 5) {
+      setShowTitileLengthError(true);
+      setTitleText(titleText.substr(0, 5));
+    }
   };
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -26,10 +38,21 @@ const TitleForm = ( ) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    sendTitle();
-    console.log(sendTitle);
-    setTitleText("")
-    setStartDate(moment(new Date()).format("YYYY-MM-DD"));
+
+    if (titleText === "") {
+      setShowTtileError(true);
+    }
+
+    if (email === "") {
+      setShowEmailError(true);
+    }
+
+    if (titleText !== "" && email !== "") {
+      sendTitle();
+      console.log(sendTitle);
+      setTitleText("");
+      setStartDate(moment(new Date()).format("YYYY-MM-DD"));
+    }
   };
 
   let config = {
@@ -39,7 +62,7 @@ const TitleForm = ( ) => {
   };
   let data = {
     title: titleText,
-    deadline: startDate
+    deadline: startDate,
   };
 
   const sendTitle = () => {
@@ -60,7 +83,10 @@ const TitleForm = ( ) => {
 
   return (
     <div className="d-flex justify-content-left form-content">
-      <Form className="event-name" style={{position: "relative", bottom: "2vh"}}>
+      <Form
+        className="event-name"
+        style={{ position: "relative", bottom: "2vh" }}
+      >
         <Form.Group controlId="exampleForm.ControlTextarea1" required>
           <Form.Label>Name of Event</Form.Label>
           <Form.Control
@@ -70,6 +96,8 @@ const TitleForm = ( ) => {
             type="text"
             required
           />
+          {showTtileError ? <label>Text is missing</label> : null}
+          {showTitileLengthError ? <label>Tile length excceded</label> : null}
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label>Email To</Form.Label>
@@ -80,6 +108,7 @@ const TitleForm = ( ) => {
             type="email"
             required
           />
+          {showEmailError ? <label>Email is missing</label> : null}
         </Form.Group>
         <div className="date-picker" style={{ marginTop: "5px" }}>
           <label htmlFor="start">Start date:</label>
@@ -94,11 +123,7 @@ const TitleForm = ( ) => {
           </div>
         </div>
         <Dropdown />
-        <Button
-          onClick={handleSubmit}
-          type="submit"
-          className="submit-button"
-        >
+        <Button onClick={handleSubmit} type="submit" className="submit-button">
           Send
         </Button>
       </Form>
