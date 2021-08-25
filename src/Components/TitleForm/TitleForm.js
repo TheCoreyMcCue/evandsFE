@@ -29,6 +29,7 @@ const TitleForm = ( ) => {
     sendTitle();
     console.log(sendTitle);
     setTitleText("")
+    setStartDate(moment(new Date()).format("YYYY-MM-DD"));
   };
 
   let config = {
@@ -38,7 +39,7 @@ const TitleForm = ( ) => {
   };
   let data = {
     title: titleText,
-    deadline: "1984-03-23"
+    deadline: startDate
   };
 
   const sendTitle = () => {
@@ -60,7 +61,7 @@ const TitleForm = ( ) => {
   return (
     <div className="d-flex justify-content-left form-content">
       <Form className="event-name" style={{position: "relative", bottom: "2vh"}}>
-        <Form.Group controlId="exampleForm.ControlTextarea1">
+        <Form.Group controlId="exampleForm.ControlTextarea1" required>
           <Form.Label>Name of Event</Form.Label>
           <Form.Control
             placeholder="Club Team Building"
