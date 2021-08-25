@@ -93,9 +93,9 @@ const TitleForm = () => {
           className="mb-3"
           required
         >
-          <Form.Label>Name of Event *</Form.Label>
+          <Form.Label>Survey Title *</Form.Label>
           <Form.Control
-            placeholder="Club Team Building"
+            placeholder="Enter Survey Title"
             onChange={handleTitleChange}
             value={titleText}
             type="text"
