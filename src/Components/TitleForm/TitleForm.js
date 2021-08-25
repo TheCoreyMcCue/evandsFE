@@ -23,9 +23,11 @@ const TitleForm = () => {
     //length check text.length > 256 show a message
     console.log("titleText length: ", titleText.length);
 
-    if (titleText.length >= 5) {
+    if (titleText.length === 4) {
       setShowTitileLengthError(true);
-      setTitleText(titleText.substr(0, 5));
+      // setTitleText(titleText.substr(0, 5));
+    } else {
+      setShowTitileLengthError(false);
     }
   };
   const handleEmailChange = (e) => {
@@ -51,6 +53,7 @@ const TitleForm = () => {
       sendTitle();
       console.log(sendTitle);
       setTitleText("");
+      setEmail("");
       setStartDate(moment(new Date()).format("YYYY-MM-DD"));
     }
   };
@@ -95,9 +98,12 @@ const TitleForm = () => {
             value={titleText}
             type="text"
             required
+            maxLength={5}
           />
-          {showTtileError ? <label>Text is missing</label> : null}
-          {showTitileLengthError ? <label>Tile length excceded</label> : null}
+          {showTtileError ? <label>Please put a title</label> : null} <br />
+          {showTitileLengthError ? (
+            <label>Title max length reached</label>
+          ) : null}
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlTextarea1" className="mb-3">
           <Form.Label>Email To</Form.Label>
