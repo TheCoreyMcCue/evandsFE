@@ -4,10 +4,14 @@ import "./TitleForm.css";
 import { useState } from "react";
 import Dropdown from '../DropDown/DropDown';
 import moment from "moment";
+const axios = require("axios").default;
 
-const TitleForm = ({ handleSubmit }) => {
+const TitleForm = ( ) => {
   const [titleText, setTitleText] = useState("");
   const [email, setEmail] = useState("");
+  const [startDate, setStartDate] = useState(
+    moment(new Date()).format("YYYY-MM-DD")
+  );
 
   const handleTitleChange = (e) => {
     setTitleText(e.target.value);
@@ -16,12 +20,41 @@ const TitleForm = ({ handleSubmit }) => {
     setEmail(e.target.value);
   };
 
-  const [startDate, setStartDate] = useState(
-    moment(new Date()).format("YYYY-MM-DD")
-  );
+  const handleNewDate = (e) => {
+    setStartDate(e.target.value);
+  };
 
-  const handleNewDate = (evt) => {
-    setStartDate(evt.target.value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    sendTitle();
+    console.log(sendTitle);
+    setTitleText("")
+  };
+
+  let config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  let data = {
+    title: titleText,
+    deadline: "1984-03-23"
+  };
+
+  const sendTitle = () => {
+    axios
+      .post(
+        "https://us-central1-and-forms.cloudfunctions.net/sendQuestionnaire",
+        data,
+        config,
+        console.log(data, config)
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
