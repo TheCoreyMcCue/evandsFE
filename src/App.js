@@ -2,14 +2,12 @@
 import "./App.css";
 import TitleForm from "./Components/TitleForm/TitleForm";
 import ProgressBar from "./Components/ProgressBar/ProgressBar";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
-const axios = require("axios").default;
+// const axios = require("axios").default;
 
 function App() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
+
 
   // axios
   //   .get("https://us-central1-and-forms.cloudfunctions.net/sendQuestionnaire")
@@ -25,33 +23,6 @@ function App() {
   //     // always executed
   //   });
 
-  let config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
-
-  let data = {
-    title: "test",
-  };
-
-  const send = () => {
-    axios
-      .post(
-        "https://us-central1-and-forms.cloudfunctions.net/sendQuestionnaire",
-        data,
-        config
-      )
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  //"https://us-central1-and-forms.cloudfunctions.net/sendQuestionnaire",
-
   return (
     <div className="App">
       <Card
@@ -59,8 +30,7 @@ function App() {
       >
         <Card.Body>
           <ProgressBar />
-          <TitleForm handleSubmit={handleSubmit} />
-          {/* <Button onClick={send}>post</Button> */}
+          <TitleForm />
         </Card.Body>
       </Card>
     </div>
