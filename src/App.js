@@ -60,7 +60,7 @@ function App() {
         <Card.Body>
           <ProgressBar />
           <TitleForm handleSubmit={handleSubmit} />
-          <Button onClick={send}>post</Button>
+          {/* <Button onClick={send}>post</Button> */}
         </Card.Body>
       </Card>
     </div>

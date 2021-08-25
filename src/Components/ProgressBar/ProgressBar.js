@@ -25,16 +25,16 @@ function getSteps() {
 }
 
 function getStepContent(stepIndex) {
-  switch (stepIndex) {
-    case 0:
-      return "Select campaign settings...";
-    case 1:
-      return "What is an ad group anyways?";
-    case 2:
-      return "This is the bit I really care about!";
-    default:
-      return "Unknown stepIndex";
-  }
+//   switch (stepIndex) {
+//     case 0:
+//       return "Select campaign settings...";
+//     case 1:
+//       return "What is an ad group anyways?";
+//     case 2:
+//       return "This is the bit I really care about!";
+//     default:
+//       return "Unknown stepIndex";
+//   }
 }
 
 export default function ProgressBar() {
@@ -56,7 +56,7 @@ export default function ProgressBar() {
 
   return (
     <div className={classes.root}>
-      <Stepper activeStep={activeStep} alternativeLabel>
+      <Stepper className="stepper" activeStep={activeStep} alternativeLabel>
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
@@ -76,7 +76,7 @@ export default function ProgressBar() {
             <Typography className={classes.instructions}>
               {getStepContent(activeStep)}
             </Typography>
-            <div>
+            <div className="tester">
               <Button
                 disabled={activeStep === 0}
                 onClick={handleBack}

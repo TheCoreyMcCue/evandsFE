@@ -5,12 +5,47 @@
 }
 @media (min-width: 300px) and (max-width: 500px) {
   .next-button {
-    top: 266px;
-    left: 70px;
+    top: 305px;
+    left: 60px;
+  }
+  .makeStyles-root-1 {
+      position: relative;
+      right: 34px;
   }
 }
-@media (min-width: 500px) and (max-width: 1400px) {
+@media (min-width: 501px) and (max-width: 699px) {
   .next-button {
-    top: 200px;
+    top: 315px;
+    left: 140px;
+  }
+}
+@media (min-width: 700px) and (max-width: 899px) {
+  .next-button {
+    top: 345px;
+    left: 260px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1099px) {
+  .next-button {
+    top: 375px;
+    left: 378px;
+  }
+}
+@media (min-width: 1100px) and (max-width: 1299px) {
+  .next-button {
+    top: 400px;
+    left: 500px;
+  }
+}
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .next-button {
+    top: 425px;
+    left: 650px;
+  }
+}
+@media (min-width: 1501px) and (max-width: 1800px) {
+  .next-button {
+    top: 470px;
+    left: 850px;
   }
 }
