@@ -63,6 +63,7 @@ const TitleForm = () => {
   let data = {
     title: titleText,
     deadline: startDate,
+    email: email
   };
 
   const sendTitle = () => {
