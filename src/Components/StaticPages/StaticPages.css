@@ -20,3 +20,26 @@
     top: 15vh;
     color: crimson;
 }
+
+.main-menu {
+    text-align: center;
+    position: relative;
+}
+
+.main-menu-welcome {
+    top: 10vh;
+    color:crimson;
+    text-emphasis-color: red;
+}
+
+.main-menu-create-button {
+    text-align: center;
+    position: relative;
+    margin-top: 25%;
+}
+
+.main-menu-logout-button {
+    text-align: center;
+    position: relative;
+    margin-top: 50%;
+}
