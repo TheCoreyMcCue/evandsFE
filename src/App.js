@@ -9,7 +9,8 @@ import MainMenu from "./Components/StaticPages/MainMenu";
 import Logout from "./Components/StaticPages/Logout";
 import { Card } from "react-bootstrap";
 import {BrowserRouter as Router,Route,} from "react-router-dom";
-import Header from "./Components/Header/Header";
+import Header from './Components/Header/Header'
+import Response from './Components/Response/Reponse';
 
 // const axios = require("axios").default;
 
@@ -35,6 +36,9 @@ function App() {
     <Header />
       <Route exact path="/">
           <Login />
+      </Route>
+      <Route exact path="/response">
+          <Response />
       </Route>
       <Route exact path="/confirmed">
           <ConfirmedResponseSent />
