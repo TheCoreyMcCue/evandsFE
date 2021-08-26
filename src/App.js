@@ -3,6 +3,12 @@ import "./App.css";
 import TitleForm from "./Components/TitleForm/TitleForm";
 import ProgressBar from "./Components/ProgressBar/ProgressBar";
 import { Card } from "react-bootstrap";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 // const axios = require("axios").default;
 
@@ -24,16 +30,23 @@ function App() {
   //   });
 
   return (
-    <div className="App">
-      <Card
-        style={{ width: "60%", position: "absolute", top: "20%", left: "20%" }}
-      >
-        <Card.Body>
-          <ProgressBar />
-          <TitleForm />
-        </Card.Body>
-      </Card>
-    </div>
+    <Router>
+      <Route exact path="/">
+        <div className="App">
+          <Card
+            style={{ width: "60%", position: "absolute", top: "20%", left: "20%" }}
+          >
+            <Card.Body>
+              <ProgressBar />
+              <TitleForm />
+            </Card.Body>
+          </Card>
+        </div>
+      </Route>
+      <Route exact path="/test">
+        <p>some stuff</p>
+      </Route>
+    </Router>
   );
 }
 
