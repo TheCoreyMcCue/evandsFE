@@ -9,6 +9,7 @@ import MainMenu from "./Components/StaticPages/MainMenu";
 import Logout from "./Components/StaticPages/Logout";
 import { Card } from "react-bootstrap";
 import {BrowserRouter as Router,Route,} from "react-router-dom";
+import Header from "./Components/Header/Header";
 
 // const axios = require("axios").default;
 
@@ -31,7 +32,8 @@ function App() {
 
   return (
     <Router>
-      <Route exact path="/login">
+    <Header />
+      <Route exact path="/">
           <Login />
       </Route>
       <Route exact path="/confirmed">
@@ -46,7 +48,7 @@ function App() {
       <Route exact path="/main_menu">
           <MainMenu />
       </Route>
-      <Route exact path="/">
+      <Route exact path="/create_menu">
         <div className="App">
           <Card
             style={{ width: "60%", position: "absolute", top: "20%", left: "20%" }}
