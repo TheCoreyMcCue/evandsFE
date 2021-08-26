@@ -5,7 +5,7 @@
 }
 @media (min-width: 320px) and (max-width: 480px) {
   .next-button {
-    top: 357px;
+    top: 353px;
     left: 147px;
   }
   .makeStyles-root-1 {
@@ -14,6 +14,12 @@
   }
   .MuiButton-root {
     width: 10px;
+  }
+  .title-input {
+    width: 47vw;
+  }
+  .email-input {
+    width: 47vw;
   }
 }
 @media (min-width: 481px) and (max-width: 600px) {

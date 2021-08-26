@@ -88,7 +88,7 @@ const TitleForm = () => {
       >
         <Form.Group
           controlId="exampleForm.ControlTextarea1"
-          className=""
+          className="title-input"
           required
         >
           <Form.Label>Survey Title *</Form.Label>
@@ -104,10 +104,10 @@ const TitleForm = () => {
             <label>Title max length reached</label>
           ) : null}
         </Form.Group>
-        <Form.Group controlId="exampleForm.ControlTextarea1" className="mb-3">
+        <Form.Group controlId="exampleForm.ControlTextarea1" className="mb-3 email-input">
           <Form.Label>Email To *</Form.Label>
           <Form.Control
-            placeholder="name@example.com"
+            placeholder="name@example1.com, name@example1.com"
             onChange={handleEmailChange}
             value={email}
             type="email"
