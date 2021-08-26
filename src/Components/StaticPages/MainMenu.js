@@ -12,7 +12,7 @@ const MainMenu = () => {
                 </h1>
                 <div className="main-menu">
                     <h2 className="main-menu-create-button">
-                        <Button size="lg" href="/create_event">Create an Event</Button>
+                        <Button size="lg" href="/create_menu">Create an Event</Button>
                     </h2>
                     <h3 className="main-menu-logout-button">
                         <Button variant="secondary" href="/logout">Logout</Button>
