@@ -33,7 +33,8 @@ function App() {
 
   return (
     <Router>
-      <Route exact path="/login">
+    <Header />
+      <Route exact path="/">
           <Login />
       </Route>
       <Route exact path="/response">
@@ -51,7 +52,7 @@ function App() {
       <Route exact path="/main_menu">
           <MainMenu />
       </Route>
-      <Route exact path="/">
+      <Route exact path="/create_menu">
         <div className="App">
           <Card
             style={{ width: "60%", position: "absolute", top: "20%", left: "20%" }}
