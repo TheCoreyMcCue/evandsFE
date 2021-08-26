@@ -49,7 +49,6 @@ const TitleForm = () => {
       setTitleText("");
       setEmail("");
       setStartDate("");
-
     }
   };
 
@@ -61,7 +60,9 @@ const TitleForm = () => {
   let data = {
     title: titleText,
     deadline: startDate,
-    respondents: email.split(",")
+    questions: [],
+
+    respondents: email.split(","),
   };
 
   const sendTitle = () => {
@@ -104,7 +105,10 @@ const TitleForm = () => {
             <label>Title max length reached</label>
           ) : null}
         </Form.Group>
-        <Form.Group controlId="exampleForm.ControlTextarea1" className="mb-3 email-input">
+        <Form.Group
+          controlId="exampleForm.ControlTextarea1"
+          className="mb-3 email-input"
+        >
           <Form.Label>Email To *</Form.Label>
           <Form.Control
             placeholder="name@example1.com, name@example1.com"
@@ -115,7 +119,7 @@ const TitleForm = () => {
           />
           {showEmailError ? <label>Email is missing</label> : null}
         </Form.Group>
-        <div className="date-picker mb-3" >
+        <div className="date-picker mb-3">
           <label htmlFor="start">Survey Deadline: *</label>
           <div>
             <input
@@ -133,15 +137,16 @@ const TitleForm = () => {
         <Button
           onClick={handleSubmit}
           type="submit"
-          className={ `${titleText.length > 0 && email.length > 0 && startDate.length > 0 ? "submit-button" : "disabled"}` }
+          className={`${
+            titleText.length > 0 && email.length > 0 && startDate.length > 0
+              ? "submit-button"
+              : "disabled"
+          }`}
         >
-
           Send
         </Button>
         <p className="pt-2">* this field is required</p>
-    
       </Form>
-
     </div>
   );
 };
