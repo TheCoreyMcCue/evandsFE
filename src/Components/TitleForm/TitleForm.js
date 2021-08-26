@@ -15,6 +15,11 @@ const TitleForm = () => {
   const [showEmailError, setShowEmailError] = useState(false);
   const [showTitileLengthError, setShowTitileLengthError] = useState(false);
 
+  const [question, setQuestion] = useState("");
+  const [answerType, setAnswerType] = useState("");
+  const [options, setOptions] = useState([""]);
+
+
   const handleTitleChange = (e) => {
     setTitleText(e.target.value);
 
@@ -57,10 +62,17 @@ const TitleForm = () => {
       "Content-Type": "application/json",
     },
   };
+    //prepare for API call
+    const questionarre = [{
+      title: question,
+      type: answerType,
+      options: options,
+    }];
+
   let data = {
     title: titleText,
     deadline: startDate,
-    questions: [],
+    questions: questionarre,
 
     respondents: email.split(","),
   };
@@ -132,7 +144,14 @@ const TitleForm = () => {
             ></input>
           </div>
         </div>
-        <Dropdown />
+        <Dropdown
+          question={question}
+          setQuestion={setQuestion}
+          answerType={answerType}
+          setAnswerType={setAnswerType}
+          options={options}
+          setOptions={setOptions}
+        />
 
         <Button
           onClick={handleSubmit}

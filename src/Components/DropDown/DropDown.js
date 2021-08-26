@@ -4,18 +4,11 @@ import Form from "react-bootstrap/Form";
 
 import Button from "react-bootstrap/Button";
 
-const DropDown = () => {
-  const [answerType, setAnswerType] = useState("");
-  const [question, setQuestion] = useState("");
+const DropDown = ({question, setQuestion, answerType, setAnswerType, options, setOptions}) => {
+  
 
-  const [options, setOptions] = useState([""]);
 
-  //prepare for API call
-  const questionarre = {
-    title: question,
-    type: answerType,
-    options: options,
-  };
+
 
   //for specific type
   const handleAnswerType = (event) => {
@@ -34,7 +27,7 @@ const DropDown = () => {
     setOptions([...options, ""]);
     console.log(options);
 
-    console.log("questionarre: ", questionarre);
+    // console.log("questionarre: ", questionarre);
   };
 
   //remove or delete option
@@ -73,7 +66,7 @@ const DropDown = () => {
                 required
               >
                 <option value="0">Choose a specific type...</option>
-                <option value="Radio button"> Radio button</option>
+                <option value="MultipleChoiceSingleAnswer"> Radio button</option>
                 <option value="Multi-line"> Multi-line</option>
                 <option value="Checkbox">Checkbox</option>
               </Form.Control>
