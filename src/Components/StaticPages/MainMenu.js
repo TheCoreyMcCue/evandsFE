@@ -11,9 +11,7 @@ const MainMenu = () => {
                 <Button type="button" href="/create_event">Create an Event</Button>
             </h2>
             <p>
-                <button type="button" class="btn btn-default btn-sm">
-                    <span class="glyphicon glyphicon-log-out"></span> Log out
-                </button>
+                <Button type="button" href="/logout">Logout</Button>
             </p>
         </div>
     )
