@@ -1,51 +1,66 @@
-@media (max-width: 300px) {
+@media (max-width: 319px) {
   .next-button {
     top: 400px;
   }
 }
-@media (min-width: 300px) and (max-width: 500px) {
+@media (min-width: 320px) and (max-width: 480px) {
   .next-button {
-    top: 305px;
-    left: 60px;
+    top: 353px;
+    left: 147px;
   }
   .makeStyles-root-1 {
       position: relative;
       right: 34px;
   }
+  .MuiButton-root {
+    width: 10px;
+  }
+  .title-input {
+    width: 47vw;
+  }
+  .email-input {
+    width: 47vw;
+  }
 }
-@media (min-width: 501px) and (max-width: 699px) {
+@media (min-width: 481px) and (max-width: 600px) {
   .next-button {
     top: 315px;
     left: 140px;
   }
 }
-@media (min-width: 700px) and (max-width: 899px) {
-  .next-button {
-    top: 345px;
-    left: 260px;
-  }
-}
-@media (min-width: 900px) and (max-width: 1099px) {
-  .next-button {
-    top: 375px;
-    left: 378px;
-  }
-}
-@media (min-width: 1100px) and (max-width: 1299px) {
+@media (min-width: 601px) and (max-width: 769px) {
   .next-button {
     top: 400px;
-    left: 500px;
+    left: 342px;
   }
 }
-@media (min-width: 1300px) and (max-width: 1500px) {
+@media (min-width: 770px) and (max-width: 1024px) {
   .next-button {
-    top: 425px;
-    left: 650px;
+    top: 405px;
+    left: 370px;
   }
 }
-@media (min-width: 1501px) and (max-width: 1800px) {
+@media (min-width: 1025px) and (max-width: 1200px) {
   .next-button {
-    top: 470px;
-    left: 850px;
+    top: 453px;
+    left: 525px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1500px) {
+  .next-button {
+    top: 453px;
+    left: 621px;
+  }
+}
+@media (min-width: 1501px) and (max-width: 1600px) {
+  .next-button {
+    top: 510px;
+    left: 805px;
+  }
+}
+@media (min-width: 1501px) {
+  .next-button {
+    top: 520px;
+    left: 870px;
   }
 }
