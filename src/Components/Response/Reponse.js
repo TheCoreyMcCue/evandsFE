@@ -29,13 +29,13 @@ function Reponse() {
     return (
         <div className="container mt-5">
             <Card>
-                <Form.Group className="mb-3 p-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3 p-3 h2" controlId="formBasicEmail">
                     <Form.Label>{title.title}</Form.Label>
                 </Form.Group>
-                <Form.Group className="mb-3 p-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3 p-3 h4" controlId="formBasicEmail">
                     <Form.Label>{question}</Form.Label>
                 </Form.Group>
-                <Form.Group className="mb-3 p-3" controlId="formBasicCheckbox">
+                <Form.Group className="mb-3 p-3 h6" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label={options[0]} />
                     <Form.Check type="checkbox" label={options[1]} />
                 </Form.Group>
