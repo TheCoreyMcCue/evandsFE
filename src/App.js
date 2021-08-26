@@ -48,7 +48,7 @@ function App() {
       <Route exact path="/main_menu">
           <MainMenu />
       </Route>
-      <Route exact path="/create_event">
+      <Route exact path="/create_menu">
         <div className="App">
           <Card
             style={{ width: "60%", position: "absolute", top: "20%", left: "20%" }}
