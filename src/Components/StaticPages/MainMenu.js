@@ -1,4 +1,5 @@
 import React from 'react'
+import {Button} from 'react-bootstrap';
 
 const MainMenu = () => {
     return (
@@ -7,7 +8,7 @@ const MainMenu = () => {
                 Welcome to EvANDs!
             </h1>
             <h2>
-                <button type="button" class="btn btn-secondary btn-lg">Create an Event</button>
+                <Button type="button" href="/create_event">Create an Event</Button>
             </h2>
             <p>
                 <button type="button" class="btn btn-default btn-sm">
