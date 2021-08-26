@@ -1,0 +1,22 @@
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-card {
+    width: 40vw;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+    margin-top: 15%;
+}
+.login-head {
+    text-align: center;
+    position: relative;
+    top: 15vh;
+    color: crimson;
+}

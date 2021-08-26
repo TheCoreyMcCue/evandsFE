@@ -18,9 +18,7 @@ const TitleForm = () => {
   const handleTitleChange = (e) => {
     setTitleText(e.target.value);
 
-    console.log("titleText length: ", titleText.length);
-
-    if (titleText.length > 5) {
+    if (titleText.length > 256) {
       setShowTitileLengthError(true);
     } else {
       setShowTitileLengthError(false);
@@ -62,8 +60,9 @@ const TitleForm = () => {
   let data = {
     title: titleText,
     deadline: startDate,
-    respondents: [email],
     questions: [],
+
+    respondents: email.split(","),
   };
 
   const sendTitle = () => {
@@ -90,7 +89,7 @@ const TitleForm = () => {
       >
         <Form.Group
           controlId="exampleForm.ControlTextarea1"
-          className="mb-3"
+          className="title-input"
           required
         >
           <Form.Label>Survey Title *</Form.Label>
@@ -100,17 +99,19 @@ const TitleForm = () => {
             value={titleText}
             type="text"
             required
-            maxLength={5}
           />
           {showTtileError ? <label>Please put a title</label> : null} <br />
           {showTitileLengthError ? (
             <label>Title max length reached</label>
           ) : null}
         </Form.Group>
-        <Form.Group controlId="exampleForm.ControlTextarea1" className="mb-3">
+        <Form.Group
+          controlId="exampleForm.ControlTextarea1"
+          className="mb-3 email-input"
+        >
           <Form.Label>Email To *</Form.Label>
           <Form.Control
-            placeholder="name@example.com"
+            placeholder="name@example1.com, name@example1.com"
             onChange={handleEmailChange}
             value={email}
             type="email"
@@ -118,8 +119,8 @@ const TitleForm = () => {
           />
           {showEmailError ? <label>Email is missing</label> : null}
         </Form.Group>
-        <div className="date-picker mb-3" style={{ marginTop: "5px" }}>
-          <label htmlFor="start">Start date: *</label>
+        <div className="date-picker mb-3">
+          <label htmlFor="start">Survey Deadline: *</label>
           <div>
             <input
               onChange={handleNewDate}
