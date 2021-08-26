@@ -10,7 +10,8 @@ function Reponse() {
     const [options, setOptions] = useState([]);
     useEffect(() => {
         fetchData();
-    }, [])    
+    }, [])        
+    const [question, setQuestion] = useState([]);        
 
     const fetchData=async()=>{
         const queryParams = new URLSearchParams(window.location.search);
@@ -19,22 +20,29 @@ function Reponse() {
         const response = await Axios(apiCallUrl);
         setTitle(response.data)
         setOptions(response.data.questions[0].options);
+        setQuestion(response.data.questions[0].title);
+        console.log(question)
     }
 
+    
+
     return (
-        <div>
-            <Form>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+        <div className="container mt-5">
+            <Card>
+                <Form.Group className="mb-3 p-3 h2" controlId="formBasicEmail">
                     <Form.Label>{title.title}</Form.Label>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Group className="mb-3 p-3 h4" controlId="formBasicEmail">
+                    <Form.Label>{question}</Form.Label>
+                </Form.Group>
+                <Form.Group className="mb-3 p-3 h6" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label={options[0]} />
                     <Form.Check type="checkbox" label={options[1]} />
                 </Form.Group>
                 <Button variant="primary" type="submit" href="/confirmed_sent">
                     Submit
                 </Button>
-            </Form>
+            </Card>
         </div>
     )
 }
