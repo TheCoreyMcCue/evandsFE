@@ -3,10 +3,23 @@
     margin-top: 20%;
 }
 
-/* .submit-button {
-    width: 100%;
-    margin-top: 0.5%;
+/* .alert-success {
+    height: 10vh;
+    width: 80vw;
+    position: relative;
+    top: 20px;
 } */
+
+.submit-button {
+    position: absolute;
+    left: 900px;
+    bottom: 45px;
+}
+.disabled {
+    position: absolute;
+    left: 900px;
+    bottom: 45px;
+}
 
 .form-content {
     /* margin-left: 20%; */

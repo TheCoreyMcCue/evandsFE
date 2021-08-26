@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ["Preference Survey", "Create Event", "Finish"];
+  return ["Create Survey", "Capture Preferences", "Create Event"];
 }
 
 function getStepContent(stepIndex) {
@@ -84,9 +84,9 @@ export default function ProgressBar() {
               >
                 Back
               </Button> */}
-              <Button variant="contained" color="primary" onClick={handleNext}>
+              {/* <Button variant="contained" color="primary" onClick={handleNext}>
                 {activeStep === steps.length - 1 ? "Finish" : "Next"}
-              </Button>
+              </Button> */}
             </div>
           </div>
         )}

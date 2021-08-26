@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
+import "../DropDown/DropDown.css";
 
 import Button from "react-bootstrap/Button";
 
@@ -8,7 +9,7 @@ const DropDown = ({question, setQuestion, answerType, setAnswerType, options, se
   
 
 
-
+  // const [openQuestion, setOpenQuestion] = useState(false)
 
   //for specific type
   const handleAnswerType = (event) => {
@@ -46,7 +47,7 @@ const DropDown = ({question, setQuestion, answerType, setAnswerType, options, se
   }
 
   return (
-    <div>
+    <div className="questions">
       <Container>
         {" "}
         <Row>
@@ -65,7 +66,7 @@ const DropDown = ({question, setQuestion, answerType, setAnswerType, options, se
                 onChange={handleAnswerType}
                 required
               >
-                <option value="0">Choose a specific type...</option>
+                <option value="0">Choose a question type</option>
                 <option value="MultipleChoiceSingleAnswer"> Radio button</option>
                 <option value="Multi-line"> Multi-line</option>
                 <option value="Checkbox">Checkbox</option>
@@ -76,6 +77,7 @@ const DropDown = ({question, setQuestion, answerType, setAnswerType, options, se
         <Row>
           <Col>
             <input
+            className="form-control"
               name="question"
               placeholder="Enter your question"
               value={question}
@@ -92,18 +94,19 @@ const DropDown = ({question, setQuestion, answerType, setAnswerType, options, se
                 <Col>
                   <input
                     name="option"
-                    placeholder="Enter option"
-                    className="ml-1"
+                    placeholder="Enter response option"
+                    className="ml-1 form-control"
                     value={option}
                     onChange={(e) => handleInputChange(e, index)}
                     required
                   />
+                  
                 </Col>
                 <Col>
                   {/* remove button appear only when you have options */}
                   {options.length !== 1 && (
                     <Button
-                      className="ml-1"
+                      className="ml-1 btn btn-muted"
                       variant="outline-secondary"
                       onClick={() => handleRemoveClick(index)}
                     >
@@ -114,7 +117,7 @@ const DropDown = ({question, setQuestion, answerType, setAnswerType, options, se
                   {options.length - 1 === index && (
                     <Button
                       variant="outline-secondary"
-                      className="ml-1"
+                      className="ml-1 btn-muted"
                       onClick={handleAddClick}
                     >
                       Add
@@ -127,6 +130,7 @@ const DropDown = ({question, setQuestion, answerType, setAnswerType, options, se
         })}
       </Container>
     </div>
+
   );
 };
 
