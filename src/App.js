@@ -5,6 +5,8 @@ import Login from "./Components/StaticPages/Login";
 import ConfirmedResponseSent from "./Components/StaticPages/ConfirmedResponseSent"
 import ConfirmedSent from "./Components/StaticPages/ConfirmedSent"
 import ProgressBar from "./Components/ProgressBar/ProgressBar";
+import MainMenu from "./Components/StaticPages/MainMenu";
+import Logout from "./Components/StaticPages/Logout";
 import { Card } from "react-bootstrap";
 import {BrowserRouter as Router,Route,} from "react-router-dom";
 
@@ -29,7 +31,7 @@ function App() {
 
   return (
     <Router>
-      <Route exact path="/login">
+      <Route exact path="/">
           <Login />
       </Route>
       <Route exact path="/confirmed">
@@ -38,7 +40,13 @@ function App() {
       <Route exact path="/confirmed_sent">
           <ConfirmedSent />
       </Route>
-      <Route exact path="/">
+      <Route exact path="/logout">
+          <Logout />
+      </Route>
+      <Route exact path="/main_menu">
+          <MainMenu />
+      </Route>
+      <Route exact path="/create_event">
         <div className="App">
           <Card
             style={{ width: "60%", position: "absolute", top: "20%", left: "20%" }}
