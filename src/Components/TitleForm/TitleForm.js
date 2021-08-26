@@ -116,7 +116,7 @@ const TitleForm = () => {
           {showEmailError ? <label>Email is missing</label> : null}
         </Form.Group>
         <div className="date-picker mb-3" >
-          <label htmlFor="start">Start date: *</label>
+          <label htmlFor="start">Survey Deadline: *</label>
           <div>
             <input
               onChange={handleNewDate}
