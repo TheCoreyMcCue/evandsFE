@@ -46,9 +46,15 @@
     left: 621px;
   }
 }
+@media (min-width: 1501px) and (max-width: 1600px) {
+  .next-button {
+    top: 510px;
+    left: 805px;
+  }
+}
 @media (min-width: 1501px) {
   .next-button {
-    top: 470px;
-    left: 850px;
+    top: 520px;
+    left: 870px;
   }
 }

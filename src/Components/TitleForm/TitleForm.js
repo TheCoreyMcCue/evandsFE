@@ -18,9 +18,7 @@ const TitleForm = () => {
   const handleTitleChange = (e) => {
     setTitleText(e.target.value);
 
-    console.log("titleText length: ", titleText.length);
-
-    if (titleText.length > 5) {
+    if (titleText.length > 256) {
       setShowTitileLengthError(true);
     } else {
       setShowTitileLengthError(false);
@@ -63,7 +61,7 @@ const TitleForm = () => {
   let data = {
     title: titleText,
     deadline: startDate,
-    respondents: [email]
+    respondents: email.split(",")
   };
 
   const sendTitle = () => {
@@ -100,7 +98,6 @@ const TitleForm = () => {
             value={titleText}
             type="text"
             required
-            maxLength={5}
           />
           {showTtileError ? <label>Please put a title</label> : null} <br />
           {showTitileLengthError ? (
@@ -133,7 +130,11 @@ const TitleForm = () => {
         </div>
         <Dropdown />
 
-        <Button onClick={handleSubmit} type="submit" className={ `${titleText.length > 0 && email.length > 0 && startDate.length > 0 ? "submit-button" : "disabled"}` }>
+        <Button
+          onClick={handleSubmit}
+          type="submit"
+          className={ `${titleText.length > 0 && email.length > 0 && startDate.length > 0 ? "submit-button" : "disabled"}` }
+        >
 
           Send
         </Button>
