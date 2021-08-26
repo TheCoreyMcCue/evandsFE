@@ -12,13 +12,14 @@
     margin: 0 auto; 
     float: none; 
     margin-bottom: 10px; 
-    margin-top: 15%;
+    margin-top: 5%;
 }
 .login-head {
     text-align: center;
     position: relative;
-    top: 15vh;
+    top: 5vh;
     color: crimson;
+    z-index: 500;
 }
 
 .main-menu {
@@ -42,4 +43,10 @@
     text-align: center;
     position: relative;
     margin-top: 50%;
+}
+
+.back-to-login-button {
+    text-align: center;
+    position: relative;
+    margin-top: 20%;
 }
