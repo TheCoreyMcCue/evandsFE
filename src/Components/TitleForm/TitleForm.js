@@ -18,7 +18,7 @@ const TitleForm = () => {
   const [question, setQuestion] = useState("");
   const [answerType, setAnswerType] = useState("");
   const [options, setOptions] = useState([""]);
-
+  // const [success, setSuccess] = useState(false);
 
   const handleTitleChange = (e) => {
     setTitleText(e.target.value);
@@ -51,9 +51,13 @@ const TitleForm = () => {
     if (titleText !== "" && email !== "") {
       sendTitle();
       console.log(sendTitle);
+      // setSuccess(true);
       setTitleText("");
       setEmail("");
       setStartDate("");
+      setQuestion("");
+      setAnswerType("");
+      setOptions([""]);
     }
   };
 
@@ -95,6 +99,10 @@ const TitleForm = () => {
 
   return (
     <div className="d-flex justify-content-left form-content">
+      {/* {success &&
+      <div class="alert alert-success" role="alert">
+        This is a success alert—check it out!
+        </div> } */}
       <Form
         className="event-name"
         style={{ position: "relative", bottom: "2vh" }}
