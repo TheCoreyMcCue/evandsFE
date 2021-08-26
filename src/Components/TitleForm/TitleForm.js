@@ -90,7 +90,7 @@ const TitleForm = () => {
       >
         <Form.Group
           controlId="exampleForm.ControlTextarea1"
-          className="mb-3"
+          className=""
           required
         >
           <Form.Label>Survey Title *</Form.Label>
@@ -118,7 +118,7 @@ const TitleForm = () => {
           />
           {showEmailError ? <label>Email is missing</label> : null}
         </Form.Group>
-        <div className="date-picker mb-3" style={{ marginTop: "5px" }}>
+        <div className="date-picker mb-3" >
           <label htmlFor="start">Start date: *</label>
           <div>
             <input
@@ -137,7 +137,8 @@ const TitleForm = () => {
 
           Send
         </Button>
-      <p className="pt-2">* this field is required</p>
+        <p className="pt-2">* this field is required</p>
+    
       </Form>
 
     </div>
