@@ -1,14 +1,12 @@
 // import logo from './logo.svg';
 import "./App.css";
 import TitleForm from "./Components/TitleForm/TitleForm";
+import Login from "./Components/StaticPages/Login";
+import ConfirmedResponseSent from "./Components/StaticPages/ConfirmedResponseSent"
+import ConfirmedSent from "./Components/StaticPages/ConfirmedSent"
 import ProgressBar from "./Components/ProgressBar/ProgressBar";
 import { Card } from "react-bootstrap";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import {BrowserRouter as Router,Route,} from "react-router-dom";
 
 // const axios = require("axios").default;
 
@@ -31,6 +29,15 @@ function App() {
 
   return (
     <Router>
+      <Route exact path="/login">
+          <Login />
+      </Route>
+      <Route exact path="/confirmed">
+          <ConfirmedResponseSent />
+      </Route>
+      <Route exact path="/confirmed_sent">
+          <ConfirmedSent />
+      </Route>
       <Route exact path="/">
         <div className="App">
           <Card
@@ -42,9 +49,6 @@ function App() {
             </Card.Body>
           </Card>
         </div>
-      </Route>
-      <Route exact path="/test">
-        <p>some stuff</p>
       </Route>
     </Router>
   );
