@@ -51,7 +51,6 @@ const TitleForm = () => {
       setTitleText("");
       setEmail("");
       setStartDate("");
-
     }
   };
 
@@ -63,7 +62,8 @@ const TitleForm = () => {
   let data = {
     title: titleText,
     deadline: startDate,
-    respondents: [email]
+    respondents: [email],
+    questions: [],
   };
 
   const sendTitle = () => {
@@ -133,13 +133,19 @@ const TitleForm = () => {
         </div>
         <Dropdown />
 
-        <Button onClick={handleSubmit} type="submit" className={ `${titleText.length > 0 && email.length > 0 && startDate.length > 0 ? "submit-button" : "disabled"}` }>
-
+        <Button
+          onClick={handleSubmit}
+          type="submit"
+          className={`${
+            titleText.length > 0 && email.length > 0 && startDate.length > 0
+              ? "submit-button"
+              : "disabled"
+          }`}
+        >
           Send
         </Button>
-      <p className="pt-2">* this field is required</p>
+        <p className="pt-2">* this field is required</p>
       </Form>
-
     </div>
   );
 };
