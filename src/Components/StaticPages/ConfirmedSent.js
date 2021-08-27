@@ -2,10 +2,8 @@ import React from 'react'
 
 const ConfirmedSent = () => {
     return (
-        <div>
-            <p>
-                Thank you for sending in your Preference Survey!
-            </p>
+        <div class="alert alert-success text-center mt-1" role="alert">
+        Thank you for submitting your preferences!
         </div>
     )
 }
